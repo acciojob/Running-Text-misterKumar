@@ -14,7 +14,7 @@
 				setTimeout(typeNextCharacter, 50000 / parseFloat(speedInput.value));
 			}
 	          else{
-				  setTimeout(typeNextCharacter, 5000 / parseInt(speedInput.value));
+				  setTimeout(typeNextCharacter, 5000 / parseFloat(speedInput.value));
 			  }
         }
       }
