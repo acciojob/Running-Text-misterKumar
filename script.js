@@ -1,27 +1,29 @@
 //your JS code here. If required.
-const text = document.getElementById('text');
-const speedInput = document.getElementById('speed');
-const originalText = 'We love Programming!';
-let currentIndex = 0;
+const textElement = document.getElementById("text");
+const speedInput = document.getElementById("speed");
+const startButton = document.getElementById("startButton");
 
-// Set initial text content
-text.innerHTML = originalText;
+let intervalId;
 
-function typeNextCharacter() {
-  if (currentIndex < originalText.length) {
-    const currentCharacter = originalText.charAt(currentIndex);
-    text.innerHTML = originalText.substring(0, currentIndex) + currentCharacter;
-    currentIndex++;
-    setTimeout(typeNextCharacter, 500 / parseInt(speedInput.value));
-  }
-}
+startButton.addEventListener("click", function () {
+    clearInterval(intervalId);
 
-speedInput.addEventListener('input', () => {
-  // Reset the index when the speed changes
-  currentIndex = 0;
-  // Start typing again with the new speed
-  typeNextCharacter();
+    const speed = parseInt(speedInput.value);
+    const text = textElement.innerText;
+    textElement.innerText = ''
+    if (speed >= 1 && speed <= 10) {
+        const delay = 500 / speed;
+        let i = 0;
+
+        intervalId = setInterval(function () {
+            if (i < text.length) {
+                textElement.textContent += text[i];
+                i++;
+            } else {
+                clearInterval(intervalId);
+            }
+        }, delay);
+    } else {
+        alert("Please enter a speed between 1 and 10.");
+    }
 });
-
-// Start typing the text with the initial speed
-typeNextCharacter();
