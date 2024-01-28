@@ -9,7 +9,7 @@ const text = document.getElementById('text');
           const currentCharacter = originalText.charAt(currentIndex);
           text.innerHTML += currentCharacter;
           currentIndex++;
-          setTimeout(typeNextCharacter, 500 / parseInt(speedInput.value));
+          setTimeout(typeNextCharacter, 5000 / parseInt(speedInput.value));
         }
       }
 
