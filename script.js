@@ -9,7 +9,12 @@
           const currentCharacter = originalText.charAt(currentIndex);
           text.innerHTML += currentCharacter;
           currentIndex++;
-          setTimeout(typeNextCharacter, 500 / parseInt(speedInput.value));
+			if(speedInput.value===2){
+				setTimeout(typeNextCharacter, 500 / parseInt(speedInput.value));
+			}
+	          else{
+				  setTimeout(typeNextCharacter, 5000 / parseInt(speedInput.value));
+			  }
         }
       }
 
