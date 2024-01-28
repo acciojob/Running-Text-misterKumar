@@ -10,7 +10,7 @@
           text.innerHTML += currentCharacter;
           currentIndex++;
           //setTimeout(typeNextCharacter, 500 / parseInt(speedInput.value));
-			if(speedInput.value==2){
+			if(speedInput.value <=4 ){
 				setTimeout(typeNextCharacter, 50000 / parseInt(speedInput.value));
 			}
 	          else{
