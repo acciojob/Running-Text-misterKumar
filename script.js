@@ -1,5 +1,5 @@
 //your JS code here. If required.
-const text = document.getElementById('text');
+ const text = document.getElementById('text');
       const speedInput = document.getElementById('speed');
       const originalText = 'We love Programming!';
       let currentIndex = 0;
@@ -9,7 +9,7 @@ const text = document.getElementById('text');
           const currentCharacter = originalText.charAt(currentIndex);
           text.innerHTML += currentCharacter;
           currentIndex++;
-          setTimeout(typeNextCharacter, 5000 / parseInt(speedInput.value));
+          setTimeout(typeNextCharacter, 500 / parseInt(speedInput.value));
         }
       }
 
